@@ -274,11 +274,6 @@
 							"variableTypeCheck": true,
 							"assignmentExpression": "userInput.residenceCountry",
 							"assignedVariableName": "residenceCountry"
-						},
-						{
-							"variableTypeCheck": true,
-							"assignmentExpression": "userInput.phoneNumber",
-							"assignedVariableName": "phone"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -294,7 +289,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -3005,7 +3000,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		}
 	],
 	"edges": [
@@ -4504,8 +4499,8 @@
 		}
 	],
 	"viewport": {
-		"x": -4870.0147915825655,
-		"y": -1196.8481985974058,
-		"zoom": 0.9100388240808991
+		"x": 1433.3286604126167,
+		"y": 244.66124655369848,
+		"zoom": 1.2277356839150602
 	}
 }
