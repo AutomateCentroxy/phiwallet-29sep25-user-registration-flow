@@ -965,7 +965,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -1979,7 +1979,7 @@
 			"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
 			"type": "callNode",
 			"position": {
-				"x": 6221.041494806046,
+				"x": 6471.041494806046,
 				"y": 1531.5547556452213
 			},
 			"data": {
@@ -1989,7 +1989,7 @@
 					"x": 6221.041494806046,
 					"y": 1531.5547556452213
 				},
-				"previousNodeId": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
+				"previousNodeId": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
 				"agamaData": {
 					"javaClassName": "",
 					"javaMethodName": "sendOTPCode",
@@ -2019,7 +2019,7 @@
 			"id": "logNode-9e97858e-3e2f-4868-b479-eea488c9d2c5",
 			"type": "logNode",
 			"position": {
-				"x": 6471.041494806046,
+				"x": 6721.041494806046,
 				"y": 1531.5547556452213
 			},
 			"data": {
@@ -2052,7 +2052,7 @@
 			"id": "assignmentNode-36f2bc2d-d826-47bc-80ef-52df9cad061b",
 			"type": "assignmentNode",
 			"position": {
-				"x": 6721.041494806046,
+				"x": 6971.041494806046,
 				"y": 1531.5547556452213
 			},
 			"data": {
@@ -2090,7 +2090,7 @@
 			"id": "repeatNode-1f92a57d-e901-466c-9aa5-393e1a264e45",
 			"type": "repeatNode",
 			"position": {
-				"x": 6971.041494806046,
+				"x": 7221.041494806046,
 				"y": 1531.5547556452213
 			},
 			"data": {
@@ -2929,6 +2929,41 @@
 				"height": 122
 			},
 			"selected": false
+		},
+		{
+			"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+			"type": "rrfNode",
+			"position": {
+				"x": 5721.041494806046,
+				"y": 1531.5547556452213
+			},
+			"data": {
+				"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+				"type": "rrfNode",
+				"position": {
+					"x": 5721.041494806046,
+					"y": 1531.5547556452213
+				},
+				"previousNodeId": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
+				"agamaData": {
+					"assignments": [],
+					"nodeIcon": "ph:globe-simple",
+					"templatePath": "InputMobileNumber.ftlh",
+					"asssignedVariableName": "Phone",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "RRF",
+					"hasComment": true,
+					"comment": " Show UI to collect Mobile number from user.",
+					"arguments": "uiFeedback"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": true
 		},
 		{
 			"id": "finishNode-533a2b9c-0403-48a2-8300-a3b5219467c0",
@@ -4439,11 +4474,49 @@
 				"fillOpacity": 0.7
 			},
 			"id": "xy-edge__assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7aesource_assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae-callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ectarget_callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec"
+		},
+		{
+			"id": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae-rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+			"type": "default",
+			"source": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
+			"target": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae"
+		},
+		{
+			"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02-callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+			"type": "default",
+			"source": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+			"target": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"sourceHandle": "source_rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+			"targetHandle": "target_callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec"
 		}
 	],
 	"viewport": {
-		"x": 840.5573093420774,
-		"y": 261.3383917873843,
-		"zoom": 0.6381643844144765
+		"x": -6192.901347340472,
+		"y": -1579.8303309777539,
+		"zoom": 1.161508731925722
 	}
 }
