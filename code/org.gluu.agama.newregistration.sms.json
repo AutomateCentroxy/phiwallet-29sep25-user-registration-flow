@@ -1433,7 +1433,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-7717b0f8-6ba2-43b7-a3f3-f507be6857b9",
@@ -1821,7 +1821,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "Error occurs while sending new code to you. Please contact site administrator.",
+							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
 							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
@@ -1837,7 +1837,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-cd866154-eda2-413d-8cd0-fe70a778b307",
@@ -1892,7 +1893,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "A new OTP code has been send to you on your mobile phone.",
+							"assignmentExpression": "\"A new OTP code has been send to you on your mobile phone.\"",
 							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
@@ -1908,7 +1909,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "logNode-9ffd63ca-de3b-4bde-86e7-b8ba78f62026",
@@ -4149,8 +4151,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5926.686368360706,
-		"y": -1262.539835614929,
-		"zoom": 0.9100388240808991
+		"x": -5882.163344309181,
+		"y": -1182.435150495385,
+		"zoom": 0.6745512671698494
 	}
 }
