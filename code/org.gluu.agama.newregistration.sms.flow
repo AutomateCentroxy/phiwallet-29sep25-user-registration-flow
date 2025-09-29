@@ -1,5 +1,5 @@
 // User Registration Techniques
-Flow org.gluu.agama.newregistration.sms
+Flow Flow org.gluu.agama.newregistration.sms
      Basepath ""
      Timeout 30000 seconds
      Configs conf
@@ -129,8 +129,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_dhout = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_dhout
+                    it_emttk = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_emttk
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -147,5 +147,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_emyaq = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_emyaq
+it_xdbsi = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_xdbsi
