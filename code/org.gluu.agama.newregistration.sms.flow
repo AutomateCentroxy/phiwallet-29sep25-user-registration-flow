@@ -117,8 +117,8 @@ Repeat 6 times max
                                                        //  Provide feedback to user.
                                                        uiFeedback.errorMessage = "Invalid code provided."
                                         Log "@info OTP verification loop completed"
-                                        it_nirbd = {success:false, error: ""ExceededTheNumberOfAttemptsAllowed" "}
-                                        Finish it_nirbd
+                                        it_xfagm = {success:false, error: ""ExceededTheNumberOfAttemptsAllowed" "}
+                                        Finish it_xfagm
                                    //  Registration failed log
                                    Log "@info User registration failed. Error : %" E
                               Otherwise
@@ -130,8 +130,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     //  Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_ecetj = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_ecetj
+                    it_tewwh = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_tewwh
                Otherwise
                     //  User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -146,5 +146,5 @@ Repeat 6 times max
 //  Maximum attempt reached
 Log "@info Maximum attempt reached"
 //  User Registration flow failed
-it_tpgwr = {success:false, error: ""User registration flow reached max attempts try later""}
-Finish it_tpgwr
+it_tklke = {success:false, error: ""User registration flow reached max attempts try later""}
+Finish it_tklke
