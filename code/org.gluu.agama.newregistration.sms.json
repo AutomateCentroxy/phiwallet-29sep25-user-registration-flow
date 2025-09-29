@@ -1930,7 +1930,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
@@ -2988,6 +2988,11 @@
 							"variableTypeCheck": true,
 							"assignmentExpression": "phoneInput.phoneNumber",
 							"assignedVariableName": "phone"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"Otp send to the registered mobile number\"",
+							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -3003,7 +3008,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -4560,8 +4565,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1980.9128526877275,
-		"y": -308.41644157507744,
-		"zoom": 0.6381643844144765
+		"x": -5302.186881905828,
+		"y": -1266.122357461484,
+		"zoom": 1
 	}
 }
