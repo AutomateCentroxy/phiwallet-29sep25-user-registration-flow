@@ -1010,7 +1010,7 @@
 			"id": "callNode-4c24ad52-b67b-42d3-a28e-2ec35974c3ac",
 			"type": "callNode",
 			"position": {
-				"x": 1348.0252143472196,
+				"x": 1347.3239647218984,
 				"y": 828.4491099011568
 			},
 			"data": {
@@ -1103,6 +1103,11 @@
 							"variableTypeCheck": true,
 							"assignmentExpression": "false",
 							"assignedVariableName": "EmailOtpValidationResult"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"OTP send to the registered email\"",
+							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -1118,7 +1123,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "repeatNode-ec975954-570a-4761-930b-43296f792ac3",
@@ -3008,7 +3013,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -4565,8 +4570,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5302.186881905828,
-		"y": -1266.122357461484,
-		"zoom": 1
+		"x": -1630.8029605695756,
+		"y": -869.9651284389458,
+		"zoom": 1.4260257173641406
 	}
 }
