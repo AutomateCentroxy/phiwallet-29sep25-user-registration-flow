@@ -2196,7 +2196,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "finishNode-280ff9f0-f180-4c88-a353-56055641413f",
@@ -2301,7 +2302,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-8157ea27-956e-4783-8809-f839eedf32a5",
@@ -2457,12 +2458,12 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "Invalid OTP, Please Try Again!",
+							"assignmentExpression": "\"Invalid OTP, Please Try Again!\"",
 							"assignedVariableName": "uiFeedback.infoMessage"
 						},
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "You have reached the maximun email OTP verification",
+							"assignmentExpression": "\"You have reached the maximun email OTP verification\"",
 							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
@@ -2478,7 +2479,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-458cc260-8ff1-4181-b768-a668d95f3d04",
@@ -4152,8 +4154,8 @@
 		}
 	],
 	"viewport": {
-		"x": -6201.163344309181,
-		"y": -918.4351504953847,
-		"zoom": 0.6745512671698494
+		"x": -4860.202440093226,
+		"y": -732.350977415404,
+		"zoom": 0.9100388240808991
 	}
 }
