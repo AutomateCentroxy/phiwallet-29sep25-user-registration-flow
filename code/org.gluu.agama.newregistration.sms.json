@@ -2043,7 +2043,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -2548,7 +2548,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"A new OTP code has been send to you on your mobile phone.\"",
-							"assignedVariableName": "uiFeedback.errorMessage"
+							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -2564,7 +2564,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "logNode-3e8cc6b9-ea5f-486b-8bd4-d27c89feea77",
@@ -4559,8 +4559,8 @@
 		}
 	],
 	"viewport": {
-		"x": -5373.30499745891,
-		"y": -1106.081253336794,
+		"x": -6499.3049974589085,
+		"y": -1581.9145815838642,
 		"zoom": 0.860949188338904
 	}
 }
