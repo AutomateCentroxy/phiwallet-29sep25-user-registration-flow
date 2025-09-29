@@ -24,8 +24,8 @@
 					"timeout": "30000",
 					"inputs": "",
 					"configs": "conf",
-					"flowname": "Flow org.gluu.agama.newregistration.sms",
-					"displayName": "Flow org.gluu.agama.newregistration.sms",
+					"flowname": "org.gluu.agama.newregistration.sms",
+					"displayName": "org.gluu.agama.newregistration.sms",
 					"creationDate": "07/02/2025",
 					"hasComment": true,
 					"comment": "User Registration Techniques"
@@ -4442,8 +4442,8 @@
 		}
 	],
 	"viewport": {
-		"x": 1175.8791777666438,
-		"y": 397.14421819426184,
+		"x": 840.5573093420774,
+		"y": 261.3383917873843,
 		"zoom": 0.6381643844144765
 	}
 }

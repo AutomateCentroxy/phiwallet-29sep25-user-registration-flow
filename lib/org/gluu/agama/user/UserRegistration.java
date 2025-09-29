@@ -3,7 +3,7 @@ package org.gluu.agama.user;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.gluu.agama.registration.JansUserRegistration;
+import org.gluu.agama.newregistration.JansUserRegistration;
 
 
 

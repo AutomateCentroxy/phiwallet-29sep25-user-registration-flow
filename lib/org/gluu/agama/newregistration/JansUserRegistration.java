@@ -1,4 +1,4 @@
-package org.gluu.agama.registration;
+package org.gluu.agama.newregistration;
 
 import io.jans.as.common.model.common.User;
 import io.jans.as.common.service.common.EncryptionService;
