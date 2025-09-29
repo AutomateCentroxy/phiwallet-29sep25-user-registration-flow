@@ -35,7 +35,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -1620,7 +1620,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"A new OTP code has been send to you on your Email\"",
-							"assignedVariableName": "uiFeedback.errorMessage"
+							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -1693,7 +1693,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
-							"assignedVariableName": "uiFeedback.infoMessage"
+							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -1709,7 +1709,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "whenNode-9977d56f-55a1-4704-95e0-cfbb2b38bb31",
@@ -4560,8 +4560,8 @@
 		}
 	],
 	"viewport": {
-		"x": 3025.599586549372,
-		"y": 672.5499005667181,
-		"zoom": 1.5669943738986813
+		"x": -1538.8433119050883,
+		"y": -496.0479350695832,
+		"zoom": 0.5494271087884399
 	}
 }
