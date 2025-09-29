@@ -32,8 +32,8 @@
 				}
 			},
 			"measured": {
-				"width": 170,
-				"height": 122
+				"width": 168,
+				"height": 120
 			},
 			"selected": false,
 			"dragging": false
@@ -94,7 +94,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -965,7 +965,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -4442,8 +4442,8 @@
 		}
 	],
 	"viewport": {
-		"x": 1175.8791777666438,
-		"y": 397.14421819426184,
-		"zoom": 0.6381643844144765
+		"x": 1364.5115772040874,
+		"y": 443.7389151045632,
+		"zoom": 0.6745512671698494
 	}
 }
