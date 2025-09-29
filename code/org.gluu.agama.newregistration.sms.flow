@@ -97,7 +97,7 @@ Repeat 6 times max
                                                        uiFeedback.infoMessage = "Error occurs while sending new code to you. Please contact site administrator."
                                                   Log "@info New OTP code send successfully!" resendHasSucceed
                                                   // Provide feedback about the error message to user.
-                                                  uiFeedback.errorMessage = "A new OTP code has been send to you on your mobile phone."
+                                                  uiFeedback.infoMessage = "A new OTP code has been send to you on your mobile phone."
                                              Otherwise
                                                   //  Add log entry with collected code in log file.
                                                   Log "@info Information provided by the user is : " otpCreds.code
@@ -131,8 +131,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_dbjxb = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_dbjxb
+                    it_gsihc = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_gsihc
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -149,5 +149,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_dxcxm = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_dxcxm
+it_yzabs = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_yzabs
