@@ -289,7 +289,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -2898,8 +2898,8 @@
 			"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
 			"type": "rrfNode",
 			"position": {
-				"x": 5863.4801827929905,
-				"y": 1496.9130992246203
+				"x": 5727.551168912707,
+				"y": 1518.6106882947124
 			},
 			"data": {
 				"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
@@ -2913,21 +2913,23 @@
 					"assignments": [],
 					"nodeIcon": "ph:globe-simple",
 					"templatePath": "InputMobileNumber.ftlh",
-					"asssignedVariableName": "phone",
+					"asssignedVariableName": "phoneInput",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
 					"displayName": "RRF",
 					"hasComment": true,
 					"comment": " Show UI to collect Mobile number from user.",
-					"arguments": "uiFeedback"
+					"arguments": [
+						"uiFeedback"
+					]
 				}
 			},
 			"measured": {
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -4499,8 +4501,8 @@
 		}
 	],
 	"viewport": {
-		"x": 1433.3286604126167,
-		"y": 244.66124655369848,
-		"zoom": 1.2277356839150602
+		"x": -8777.689664020982,
+		"y": -2061.062083884615,
+		"zoom": 1.5669943738986813
 	}
 }
