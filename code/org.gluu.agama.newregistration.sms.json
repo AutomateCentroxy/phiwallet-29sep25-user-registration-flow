@@ -1709,7 +1709,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "whenNode-9977d56f-55a1-4704-95e0-cfbb2b38bb31",
@@ -1914,7 +1914,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"Invalid OTP, Please Try Again!\"",
-							"assignedVariableName": "uiFeedback.infoMessage"
+							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -1930,7 +1930,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
@@ -4560,8 +4560,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1538.8433119050883,
-		"y": -496.0479350695832,
-		"zoom": 0.5494271087884399
+		"x": -1980.9128526877275,
+		"y": -308.41644157507744,
+		"zoom": 0.6381643844144765
 	}
 }
