@@ -659,7 +659,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "repeatNode-4fa6ab39-9ada-44af-b4bd-de402e6fc977",
@@ -1301,9 +1301,9 @@
 				"previousNodeId": "logNode-dae29d79-7b1b-488b-8fc0-75e0fd8a43b7",
 				"agamaData": {
 					"javaClassName": "",
-					"javaMethodName": "Call",
-					"javaVariableName": "=",
-					"exceptionVariableField": "",
+					"javaMethodName": "addNewUser",
+					"javaVariableName": "userRegistrationService",
+					"exceptionVariableField": "E",
 					"callType": "Call method on instance",
 					"arguments": [
 						"userRegistrationService",
@@ -1314,7 +1314,7 @@
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
-					"displayName": "CALL",
+					"displayName": "",
 					"hasComment": true,
 					"comment": " Call user registration service method to register a new user",
 					"asssignedVariableName": "inum"
@@ -1323,7 +1323,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "whenNode-6357d57a-16fa-4033-934a-d11bbdba01c3",
@@ -2406,7 +2407,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "logNode-7cbde436-a2c8-435f-8d79-20d8e17501be",
@@ -4218,8 +4220,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3372.4230719319585,
-		"y": -912.3093069965676,
+		"x": -5792.323288753754,
+		"y": -923.8958102131194,
 		"zoom": 0.9100388240808991
 	}
 }
