@@ -75,7 +75,7 @@ Repeat 6 times max
                                         //  Show user creation log
                                         Log "@info User % has been created" inum
                                         //  "User Account created successfully!"
-                                        uiFeedback.infoMessage = User Account created successfully!
+                                        uiFeedback.infoMessage = "User Account created successfully!"
                                         //  sent sms otp
                                         smsOtpSend = Call userRegistrationService sendOTPCode phone
                                         //  The OTP Code has been send to user.
@@ -117,8 +117,8 @@ Repeat 6 times max
                                                        //  Provide feedback to user.
                                                        uiFeedback.errorMessage = Invalid code provided.
                                         Log "@info OTP verification loop completed"
-                                        it_uklui = {success:false, error: ""ExceededTheNumberOfAttemptsAllowed" "}
-                                        Finish it_uklui
+                                        it_duefw = {success:false, error: ""ExceededTheNumberOfAttemptsAllowed" "}
+                                        Finish it_duefw
                                    //  Registration failed log
                                    Log "@info User registration failed. Error : %" E
                               Otherwise
@@ -129,8 +129,8 @@ Repeat 6 times max
                                    uiFeedback.errorMessage = You have reached the maximun email OTP verification
                     //  Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_cwmwv = {success:false, error: ""User update flow reached max attempts. Try later""}
-                    Finish it_cwmwv
+                    it_ftdwk = {success:false, error: ""User update flow reached max attempts. Try later""}
+                    Finish it_ftdwk
                Otherwise
                     //  User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -145,5 +145,5 @@ Repeat 6 times max
 //  Maximum attempt reached
 Log "@info Maximum attempt reached"
 //  User Registration flow failed
-it_fbffn = {success:false, error: ""User registration flow reached max attempts try later""}
-Finish it_fbffn
+it_ayioi = {success:false, error: ""User registration flow reached max attempts try later""}
+Finish it_ayioi
