@@ -1,13 +1,17 @@
+[#ftl output_format="HTML"]
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>User Registration
-	</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  </head>
-  <body>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>User Registration
+	</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></head>
+<body>
+
+  
+	
+	
+	
+	
+  
+  
 	<div class="registration-container">
 	  <div align="center" class="flex">
 		<img src="https://gluu.org/wp-content/uploads/2020/12/logo.png" id="inh1m">
@@ -32,40 +36,41 @@
 			<input type="text" id="uid" name="uid" pattern="[A-Za-z]+" title="Name should contain only alphabets" required="" placeholder="Choose a username" class="form-control">
 		  </div>
 		  <div class="form-group">
-			<label class="form-label">Display Name: <span class="required">*</span></label>
-			<input type="text" id="displayName" name="displayName" required="" placeholder="Enter your display name" class="form-control">
-		  </div>
-		  <div class="form-group">
-			<label class="form-label">First Name: <span class="required">*</span></label>
-			<input type="text" id="givenName" name="givenName" required="" placeholder="Enter your first name" class="form-control">
-		  </div>
-		  <div class="form-group">
-			<label class="form-label">Last Name: <span class="required">*</span></label>
-			<input type="text" id="sn" name="sn" required="" placeholder="Enter your last name" class="form-control">
-		  </div>
-		  <div class="form-group">
 			<label class="form-label">Email: <span class="required">*</span></label>
 			<input type="email" id="mail" name="mail" required="" placeholder="Enter your email" class="form-control">
 		  </div>
 		  <div class="form-group">
-			<label class="form-label">Password: <span class="required">*</span></label>
-			<input type="password" id="userPassword" name="userPassword" minlength="6" pattern="^(?=.*[!@#$%^&amp;*])(?=.*[A-Za-z0-9]).{6,}$" required="" placeholder="Choose a strong password" title="Password must be at least 6 characters long and contain at least one special character (!@#$%^&amp;*)" class="form-control">
+			<label class="form-label">Mobile Number: <span class="required">*</span></label>
+			<input type="text" id="phoneNumber" name="phoneNumber" pattern="^\+?[1-9]\d{1,14}$" title="Enter a valid phone number (e.g., +1234567890" required="" placeholder="+1234567890" class="form-control">
 		  </div>
 		  <div class="form-group">
-			<label class="form-label">Repeat Password: <span class="required">*</span></label>
-			<input type="password" id="confirmPassword" name="confirmPassword" required="" placeholder="Confirm your password" class="form-control">
-			<div id="error-message" class="error-message">
-			</div>
+			<label class="form-label">Language: <span class="required">*</span></label>
+			<input type="text" id="lang" name="lang" required="" placeholder="Enter language code (e.g., es, pt, ar, en, fr, id)" class="form-control">
+		  </div>
+		  <div class="form-group">
+			<label class="form-label">Residence Country: <span class="required">*</span></label>
+			<input type="text" name="residenceCountry" required="" placeholder="Enter country code (e.g., IN, US)" class="form-control">
+		  </div>
+		  <div class="form-group">
+			<label class="form-label">Referral Code:</label>
+			<input type="text" id="referralCode" name="referralCode" placeholder="Optional referral code" class="form-control">
 		  </div>
 		  <div class="buttons">
 			<button type="submit" class="btn btn-primary">Register</button>
 			<button type="reset" id="cancel" name="cancel" value="cancel" class="btn btn-primary">Reset</button>
 		  </div>
+		  <!-- Hidden fields for context auto-fill -->
+		  <input type="hidden" id="location" name="location" value="Unknown">
+		  <input type="hidden" id="zone" name="zone" value="">
+		  <input type="hidden" id="device" name="device" value="">
 		</form>
 	  </div>
 	</div>
-  </body>
-  <style>
+  
+  
+  
+</body>
+<style>
 	body {
 	  font-family: Arial, sans-serif;
 	  background-color: #f8f9fa;
@@ -168,7 +173,7 @@
 	  text-decoration: underline;
 	}
   </style>
-  <script>
+<script>
 	function validateForm(event) {
 	  let password = document.getElementById("userPassword").value;
 	  let confirmPassword = document.getElementById("confirmPassword").value;
@@ -180,5 +185,20 @@
 	  errorMessage.innerText = "";
 	  return true;
 	}
+	// Auto-fill time zone
+	document.getElementById("zone").value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+	// Auto-fill device info
+	const userAgent = navigator.userAgent;
+	let device = "Unknown";
+	if (userAgent.includes("Firefox")) device = "Firefox";
+	else if (userAgent.includes("Chrome")) device = "Chrome";
+	else if (userAgent.includes("Safari")) device = "Safari";
+	else if (userAgent.includes("Edge")) device = "Edge";
+	else if (userAgent.includes("Windows")) device = "Windows";
+	else if (userAgent.includes("Linux")) device = "Linux";
+	else if (userAgent.includes("Mac")) device = "Mac";
+	document.getElementById("device").value = device;
+	// Optional: location default as "Unknown"
+	document.getElementById("location").value = "Web";
   </script>
 </html>
