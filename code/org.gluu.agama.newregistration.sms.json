@@ -21,7 +21,7 @@
 					"basepath": "",
 					"configParams": "{\n  \"ACCOUNT_SID\": \"PUT_YOUR_TWILIO_ACCOUNT_SID_HERE\",\n  \"AUTH_TOKEN\": \"PUT_YOUR_TWILIO_AUTH_TOKEN_HERE\",\n  \"FROM_NUMBER\": \"PUT_YOUR_TWILIO_FROM_NUMBER_HERE\"\n}",
 					"nodeIcon": "material-symbols:line-start-square",
-					"timeout": "30000",
+					"timeout": "300000",
 					"inputs": "",
 					"configs": "conf",
 					"flowname": "org.gluu.agama.newregistration.sms",
@@ -35,7 +35,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -1970,7 +1970,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -4560,8 +4560,8 @@
 		}
 	],
 	"viewport": {
-		"x": -4702.30499745891,
-		"y": -1141.9145815838642,
-		"zoom": 0.860949188338904
+		"x": 3025.599586549372,
+		"y": 672.5499005667181,
+		"zoom": 1.5669943738986813
 	}
 }
