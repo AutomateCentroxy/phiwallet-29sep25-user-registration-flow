@@ -1101,7 +1101,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-22bd4a19-ebdc-4095-b9cf-fb23655fae0b",
@@ -1416,7 +1416,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "User Account created successfully!",
+							"assignmentExpression": "\"User Account created successfully!\"",
 							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
@@ -1432,7 +1432,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "callNode-7717b0f8-6ba2-43b7-a3f3-f507be6857b9",
@@ -4148,8 +4149,8 @@
 		}
 	],
 	"viewport": {
-		"x": -3447.3088214975423,
-		"y": -793.0422476708202,
-		"zoom": 0.6745512671698494
+		"x": -5926.686368360706,
+		"y": -1262.539835614929,
+		"zoom": 0.9100388240808991
 	}
 }
