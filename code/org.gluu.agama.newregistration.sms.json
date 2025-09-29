@@ -35,7 +35,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": false
 		},
 		{
 			"id": "assignmentNode-f15fd3c0-952d-4ae1-ac54-a6984a57a6eb",
@@ -76,7 +77,7 @@
 						},
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "",
+							"assignmentExpression": "\"\"",
 							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
@@ -92,7 +93,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "repeatNode-60a73fc5-b808-4927-9481-5ba985c0fd59",
@@ -4144,8 +4146,8 @@
 		}
 	],
 	"viewport": {
-		"x": 0,
-		"y": 0,
-		"zoom": 1
+		"x": 126.97106614070117,
+		"y": 57.66599117823978,
+		"zoom": 0.9100388240808991
 	}
 }
