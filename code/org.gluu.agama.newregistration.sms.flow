@@ -1,7 +1,7 @@
 // User Registration Techniques
 Flow org.gluu.agama.newregistration.sms
      Basepath ""
-     Timeout 30000 seconds
+     Timeout 300000 seconds
      Configs conf
 // Create  variable for UCreate  variable for UI feedbackI feedback
 uiFeedback = {}
@@ -20,7 +20,6 @@ Repeat 6 times max
      userName = userInput.uid
      userPassword = userInput.userPassword
      residenceCountry = userInput.residenceCountry
-     phone = userInput.phoneNumber
      referralCode = userInput.referralCode
      lang = userInput.lang
      // Validate user inputs
@@ -42,6 +41,7 @@ Repeat 6 times max
                     Log "@info OTP generated and send to: " email
                     // EmailOtpValidationResult = flase
                     EmailOtpValidationResult = false
+                    uiFeedback.infoMessage = "OTP send to the registered email"
                     EmailMax = Repeat 4 times max
                          // "Email OTP verification loop Started"
                          Log "@info Email OTP verification loop Started"
@@ -56,11 +56,11 @@ Repeat 6 times max
                               otpCode = Call userRegistrationService sendEmail email lang
                               When otpCode is null
                                    Log "@info Fail to resend new code to user. " otpCode
-                                   uiFeedback.infoMessage = "Error occurs while sending new code to you. Please contact site administrator."
+                                   uiFeedback.errorMessage = "Error occurs while sending new code to you. Please contact site administrator."
                               // Log code resend
                               Log "@info New OTP code send successfully!" otpCode
                               // Provide feedback about the error message to user.
-                              uiFeedback.errorMessage = "A new OTP code has been send to you on your Email"
+                              uiFeedback.infoMessage = "A new OTP code has been send to you on your Email"
                          Otherwise
                               // "OTP provided by the user " 
                               Log "@info OTP provided by the user " 
@@ -74,8 +74,12 @@ Repeat 6 times max
                                    When inum is not null
                                         // Show user creation log
                                         Log "@info User % has been created" inum
-                                        // "User Account created successfully!"
                                         uiFeedback.infoMessage = "User Account created successfully!"
+                                        //  Show UI to collect Mobile number from user.
+                                        phoneInput = RRF "InputMobileNumber.ftlh" uiFeedback
+                                        // Get the mobile number
+                                        phone = phoneInput.phoneNumber
+                                        uiFeedback.infoMessage = "Otp send to the registered mobile number"
                                         // sent sms otp
                                         smsOtpSend = Call userRegistrationService sendOTPCode phone
                                         // The OTP Code has been send to user.
@@ -92,10 +96,10 @@ Repeat 6 times max
                                                   When resendHasSucceed is null
                                                        Log "@info Fail to resend new code to user. " resendHasSucceed
                                                        // Provide feedback about the otp resend error to user.
-                                                       uiFeedback.infoMessage = "Error occurs while sending new code to you. Please contact site administrator."
+                                                       uiFeedback.errorMessage = "Error occurs while sending new code to you. Please contact site administrator."
                                                   Log "@info New OTP code send successfully!" resendHasSucceed
                                                   // Provide feedback about the error message to user.
-                                                  uiFeedback.errorMessage = "A new OTP code has been send to you on your mobile phone."
+                                                  uiFeedback.infoMessage = "A new OTP code has been send to you on your mobile phone."
                                              Otherwise
                                                   //  Add log entry with collected code in log file.
                                                   Log "@info Information provided by the user is : " otpCreds.code
@@ -125,12 +129,12 @@ Repeat 6 times max
                                    // Invalid OTP
                                    Log "@info Invalid OTP, Please Try Again!"
                                    // "Invalid OTP, Please Try Again!"
-                                   uiFeedback.infoMessage = "Invalid OTP, Please Try Again!"
+                                   uiFeedback.errorMessage = "Invalid OTP, Please Try Again!"
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_wkspt = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_wkspt
+                    it_hdgci = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_hdgci
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -147,5 +151,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_smjzw = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_smjzw
+it_wiccj = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_wiccj

@@ -21,7 +21,7 @@
 					"basepath": "",
 					"configParams": "{\n  \"ACCOUNT_SID\": \"PUT_YOUR_TWILIO_ACCOUNT_SID_HERE\",\n  \"AUTH_TOKEN\": \"PUT_YOUR_TWILIO_AUTH_TOKEN_HERE\",\n  \"FROM_NUMBER\": \"PUT_YOUR_TWILIO_FROM_NUMBER_HERE\"\n}",
 					"nodeIcon": "material-symbols:line-start-square",
-					"timeout": "30000",
+					"timeout": "300000",
 					"inputs": "",
 					"configs": "conf",
 					"flowname": "org.gluu.agama.newregistration.sms",
@@ -274,11 +274,6 @@
 							"variableTypeCheck": true,
 							"assignmentExpression": "userInput.residenceCountry",
 							"assignedVariableName": "residenceCountry"
-						},
-						{
-							"variableTypeCheck": true,
-							"assignmentExpression": "userInput.phoneNumber",
-							"assignedVariableName": "phone"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -965,7 +960,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -1015,7 +1010,7 @@
 			"id": "callNode-4c24ad52-b67b-42d3-a28e-2ec35974c3ac",
 			"type": "callNode",
 			"position": {
-				"x": 1348.0252143472196,
+				"x": 1347.3239647218984,
 				"y": 828.4491099011568
 			},
 			"data": {
@@ -1108,6 +1103,11 @@
 							"variableTypeCheck": true,
 							"assignmentExpression": "false",
 							"assignedVariableName": "EmailOtpValidationResult"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"OTP send to the registered email\"",
+							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -1123,7 +1123,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "repeatNode-ec975954-570a-4761-930b-43296f792ac3",
@@ -1625,7 +1625,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"A new OTP code has been send to you on your Email\"",
-							"assignedVariableName": "uiFeedback.errorMessage"
+							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -1698,7 +1698,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
-							"assignedVariableName": "uiFeedback.infoMessage"
+							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -1900,44 +1900,6 @@
 			"selected": false
 		},
 		{
-			"id": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
-			"type": "assignmentNode",
-			"position": {
-				"x": 5471.041494806046,
-				"y": 1531.5547556452213
-			},
-			"data": {
-				"id": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
-				"type": "assignmentNode",
-				"position": {
-					"x": 5471.041494806046,
-					"y": 1531.5547556452213
-				},
-				"previousNodeId": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
-				"agamaData": {
-					"assignments": [
-						{
-							"variableTypeCheck": true,
-							"assignmentExpression": "\"User Account created successfully!\"",
-							"assignedVariableName": "uiFeedback.infoMessage"
-						}
-					],
-					"nodeIcon": "material-symbols:equal",
-					"nodeColor": "",
-					"titleColor": "",
-					"descColor": "",
-					"displayName": "",
-					"hasComment": true,
-					"comment": "\"User Account created successfully!\""
-				}
-			},
-			"measured": {
-				"width": 170,
-				"height": 122
-			},
-			"selected": false
-		},
-		{
 			"id": "assignmentNode-83bcd9d9-bf0e-4eb2-bd27-fdce38e10ae8",
 			"type": "assignmentNode",
 			"position": {
@@ -1957,7 +1919,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"Invalid OTP, Please Try Again!\"",
-							"assignedVariableName": "uiFeedback.infoMessage"
+							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -1979,8 +1941,8 @@
 			"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
 			"type": "callNode",
 			"position": {
-				"x": 6221.041494806046,
-				"y": 1531.5547556452213
+				"x": 6279.860091800709,
+				"y": 1501.588407481854
 			},
 			"data": {
 				"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
@@ -1989,7 +1951,7 @@
 					"x": 6221.041494806046,
 					"y": 1531.5547556452213
 				},
-				"previousNodeId": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
+				"previousNodeId": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
 				"agamaData": {
 					"javaClassName": "",
 					"javaMethodName": "sendOTPCode",
@@ -2013,14 +1975,15 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "logNode-9e97858e-3e2f-4868-b479-eea488c9d2c5",
 			"type": "logNode",
 			"position": {
-				"x": 6471.041494806046,
-				"y": 1531.5547556452213
+				"x": 6595.199671684002,
+				"y": 1470.0093673079682
 			},
 			"data": {
 				"id": "logNode-9e97858e-3e2f-4868-b479-eea488c9d2c5",
@@ -2046,14 +2009,15 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "assignmentNode-36f2bc2d-d826-47bc-80ef-52df9cad061b",
 			"type": "assignmentNode",
 			"position": {
-				"x": 6721.041494806046,
-				"y": 1531.5547556452213
+				"x": 6824.24649964847,
+				"y": 1474.2121195782115
 			},
 			"data": {
 				"id": "assignmentNode-36f2bc2d-d826-47bc-80ef-52df9cad061b",
@@ -2084,14 +2048,15 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "repeatNode-1f92a57d-e901-466c-9aa5-393e1a264e45",
 			"type": "repeatNode",
 			"position": {
-				"x": 6971.041494806046,
-				"y": 1531.5547556452213
+				"x": 7047.852757092053,
+				"y": 1456.667164219742
 			},
 			"data": {
 				"id": "repeatNode-1f92a57d-e901-466c-9aa5-393e1a264e45",
@@ -2117,14 +2082,15 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "logNode-fd1cbae4-f200-43f3-b10c-bcbd6693965f",
 			"type": "logNode",
 			"position": {
-				"x": 7221.041494806046,
-				"y": 1531.5547556452213
+				"x": 7321.849251472639,
+				"y": 1444.0892020668539
 			},
 			"data": {
 				"id": "logNode-fd1cbae4-f200-43f3-b10c-bcbd6693965f",
@@ -2151,14 +2117,15 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "assignmentNode-4504bb78-fd20-4fd6-a80b-4233c67f0730",
 			"type": "assignmentNode",
 			"position": {
-				"x": 7471.041494806046,
-				"y": 1531.5547556452213
+				"x": 7620.7706627961325,
+				"y": 1438.159334027643
 			},
 			"data": {
 				"id": "assignmentNode-4504bb78-fd20-4fd6-a80b-4233c67f0730",
@@ -2189,14 +2156,15 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "finishNode-126fa6ea-2bef-40ad-92fa-78233083794d",
 			"type": "finishNode",
 			"position": {
-				"x": 7721.041494806046,
-				"y": 1531.5547556452213
+				"x": 7912.279739070611,
+				"y": 1438.1593340276427
 			},
 			"data": {
 				"id": "finishNode-126fa6ea-2bef-40ad-92fa-78233083794d",
@@ -2223,7 +2191,8 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "rrfNode-653a39e2-4283-4352-9da1-8376d54ad9e8",
@@ -2584,7 +2553,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"A new OTP code has been send to you on your mobile phone.\"",
-							"assignedVariableName": "uiFeedback.errorMessage"
+							"assignedVariableName": "uiFeedback.infoMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -2656,7 +2625,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
-							"assignedVariableName": "uiFeedback.infoMessage"
+							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -2672,7 +2641,8 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": false,
+			"dragging": false
 		},
 		{
 			"id": "whenNode-03a6d7a1-ad49-4547-a4a6-acb992db6499",
@@ -2931,6 +2901,44 @@
 			"selected": false
 		},
 		{
+			"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+			"type": "rrfNode",
+			"position": {
+				"x": 5727.551168912707,
+				"y": 1518.6106882947124
+			},
+			"data": {
+				"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+				"type": "rrfNode",
+				"position": {
+					"x": 5721.041494806046,
+					"y": 1531.5547556452213
+				},
+				"previousNodeId": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
+				"agamaData": {
+					"assignments": [],
+					"nodeIcon": "ph:globe-simple",
+					"templatePath": "InputMobileNumber.ftlh",
+					"asssignedVariableName": "phoneInput",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "RRF",
+					"hasComment": true,
+					"comment": " Show UI to collect Mobile number from user.",
+					"arguments": [
+						"uiFeedback"
+					]
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": false,
+			"dragging": false
+		},
+		{
 			"id": "finishNode-533a2b9c-0403-48a2-8300-a3b5219467c0",
 			"type": "finishNode",
 			"position": {
@@ -2956,6 +2964,88 @@
 					"returnVariable": "userName",
 					"finishMode": "withVariable",
 					"nodeIcon": "material-symbols:line-end-square-rounded"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": false
+		},
+		{
+			"id": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+			"type": "assignmentNode",
+			"position": {
+				"x": 5983.294648372437,
+				"y": 1500.7420855311073
+			},
+			"data": {
+				"id": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+				"type": "assignmentNode",
+				"position": {
+					"x": 5977.551168912707,
+					"y": 1518.6106882947124
+				},
+				"previousNodeId": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+				"agamaData": {
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "phoneInput.phoneNumber",
+							"assignedVariableName": "phone"
+						},
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"Otp send to the registered mobile number\"",
+							"assignedVariableName": "uiFeedback.infoMessage"
+						}
+					],
+					"nodeIcon": "material-symbols:equal",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "Phone ",
+					"hasComment": true,
+					"comment": "Get the mobile number"
+				}
+			},
+			"measured": {
+				"width": 170,
+				"height": 122
+			},
+			"selected": false,
+			"dragging": false
+		},
+		{
+			"id": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
+			"type": "assignmentNode",
+			"position": {
+				"x": 5471.041494806046,
+				"y": 1531.5547556452213
+			},
+			"data": {
+				"id": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
+				"type": "assignmentNode",
+				"position": {
+					"x": 5471.041494806046,
+					"y": 1531.5547556452213
+				},
+				"previousNodeId": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
+				"agamaData": {
+					"assignments": [
+						{
+							"variableTypeCheck": true,
+							"assignmentExpression": "\"User Account created successfully!\"",
+							"assignedVariableName": "uiFeedback.infoMessage"
+						}
+					],
+					"nodeIcon": "material-symbols:equal",
+					"nodeColor": "",
+					"titleColor": "",
+					"descColor": "",
+					"displayName": "",
+					"hasComment": true,
+					"comment": ""
 				}
 			},
 			"measured": {
@@ -3910,25 +4000,6 @@
 			"sourceHandle": "source_logNode-64776aa5-0153-474b-a3e6-db4379554b50"
 		},
 		{
-			"id": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788-assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
-			"type": "default",
-			"source": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
-			"target": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
-			"labelBgPadding": [
-				8,
-				4
-			],
-			"labelBgBorderRadius": 4,
-			"label": "",
-			"labelBgStyle": {
-				"fill": "#009688",
-				"color": "#ffffff",
-				"fillOpacity": 0.7
-			},
-			"labelShowBg": true,
-			"sourceHandle": "source_logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788"
-		},
-		{
 			"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec-logNode-9e97858e-3e2f-4868-b479-eea488c9d2c5",
 			"type": "default",
 			"source": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
@@ -4423,10 +4494,29 @@
 			"sourceHandle": "source_logNode-7e1bba4e-38ad-48c1-a09b-ef8cfa0e38d9"
 		},
 		{
-			"source": "assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
-			"sourceHandle": "source_assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae",
-			"target": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
-			"targetHandle": "target_callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+			"id": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788-assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
+			"type": "default",
+			"source": "logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788",
+			"target": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_logNode-dfc16af5-4d1b-4bd5-88b8-36562fd3c788"
+		},
+		{
+			"source": "assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
+			"sourceHandle": "source_assignmentNode-f9754949-7a69-46de-8556-c9c89c275050",
+			"target": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+			"targetHandle": "target_rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
 			"label": "",
 			"labelBgPadding": [
 				8,
@@ -4438,12 +4528,50 @@
 				"color": "#ffffff",
 				"fillOpacity": 0.7
 			},
-			"id": "xy-edge__assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7aesource_assignmentNode-2029d467-ca89-4476-b779-c51a39ddc7ae-callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ectarget_callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec"
+			"id": "xy-edge__assignmentNode-f9754949-7a69-46de-8556-c9c89c275050source_assignmentNode-f9754949-7a69-46de-8556-c9c89c275050-rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02target_rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02"
+		},
+		{
+			"id": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02-assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+			"type": "default",
+			"source": "rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02",
+			"target": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"label": "",
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"labelShowBg": true,
+			"sourceHandle": "source_rrfNode-8eb61d0a-e181-4c11-ad8b-715973e3eb02"
+		},
+		{
+			"id": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831-callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+			"type": "default",
+			"source": "assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+			"target": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
+			"label": "",
+			"labelBgPadding": [
+				8,
+				4
+			],
+			"labelBgBorderRadius": 4,
+			"labelBgStyle": {
+				"fill": "#009688",
+				"color": "#ffffff",
+				"fillOpacity": 0.7
+			},
+			"sourceHandle": "source_assignmentNode-1bd0308e-7300-4e94-bcbf-5ada01203831",
+			"targetHandle": "target_callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec"
 		}
 	],
 	"viewport": {
-		"x": 840.5573093420774,
-		"y": 261.3383917873843,
-		"zoom": 0.6381643844144765
+		"x": -1630.8029605695756,
+		"y": -869.9651284389458,
+		"zoom": 1.4260257173641406
 	}
 }
