@@ -1029,7 +1029,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-4f4b0f87-b102-4c99-9369-3cb01077f6de",
@@ -1084,7 +1084,7 @@
 					"assignments": [
 						{
 							"variableTypeCheck": true,
-							"assignmentExpression": "A new OTP code has been send to you on your Email",
+							"assignmentExpression": "\"A new OTP code has been send to you on your Email\"",
 							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
@@ -1100,7 +1100,8 @@
 			"measured": {
 				"width": 170,
 				"height": 122
-			}
+			},
+			"selected": true
 		},
 		{
 			"id": "logNode-22bd4a19-ebdc-4095-b9cf-fb23655fae0b",
@@ -4147,8 +4148,8 @@
 		}
 	],
 	"viewport": {
-		"x": -4991.028933859299,
-		"y": -1222.3340088217603,
-		"zoom": 0.9100388240808991
+		"x": -3447.3088214975423,
+		"y": -793.0422476708202,
+		"zoom": 0.6745512671698494
 	}
 }
