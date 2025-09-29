@@ -1979,8 +1979,8 @@
 			"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
 			"type": "callNode",
 			"position": {
-				"x": 6471.041494806046,
-				"y": 1531.5547556452213
+				"x": 6291.964063631554,
+				"y": 1528.9719080802045
 			},
 			"data": {
 				"id": "callNode-98c5fd20-2166-4b93-a7f9-a54f6c3b16ec",
@@ -2013,7 +2013,8 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true,
+			"dragging": false
 		},
 		{
 			"id": "logNode-9e97858e-3e2f-4868-b479-eea488c9d2c5",
@@ -2963,7 +2964,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "finishNode-533a2b9c-0403-48a2-8300-a3b5219467c0",
