@@ -1,0 +1,149 @@
+//  User Registration Techniques
+Flow org.gluu.agama.newregistration.sms
+     Basepath ""
+     Timeout 30000 seconds
+     Configs conf
+//  Create  variable for UCreate  variable for UI feedbackI feedback
+uiFeedback = {}
+emailObj = {}
+sendMail = true
+uiInput = {matches: true, resent: false}
+uiFeedback.errorMessage = __________
+//  Iterate x times max
+Repeat 6 times max
+     //  Retrieve user profile  from UI
+     userInput = RRF "profile.ftlh" uiFeedback
+     //  create an instance of Registration service
+     userRegistrationService = Call org.gluu.agama.user.UserRegistration#getInstance conf
+     //  Assign userName, email and password  to a variable
+     email = userInput.mail
+     userName = userInput.uid
+     userPassword = userInput.userPassword
+     residenceCountry = userInput.residenceCountry
+     phone = userInput.phoneNumber
+     referralCode = userInput.referralCode
+     lang = userInput.lang
+     //  Validate user inputs
+     validation = Call userRegistrationService validateInputs userInput
+     //  Validation result log
+     Log "@info Validation result:  % , % , %" validation validation.valid validation.message
+     //  If successfully validate
+     When validation.valid is true
+          //  Check user already exist or not with mail
+          user = Call userRegistrationService getUserEntityByMail email
+          //  If user not found
+          When user.empty is true
+               //  Check user already exist or not with username
+               userWithUid = Call userRegistrationService getUserEntityByUsername userName
+               //  user not found
+               When userWithUid.empty is true
+                    //  sent Email otp
+                    otpCode = Call userRegistrationService sendEmail email lang
+                    Log "@info OTP generated and send to: " email
+                    //  EmailOtpValidationResult = flase
+                    EmailOtpValidationResult = false
+                    Repeat 4 times max
+                         //  "Email OTP verification loop Started"
+                         Log "@info Email OTP verification loop Started"
+                         //  uiFeedback.email/matches
+                         uiFeedback.email = email
+                         uiFeedback.matches = true
+                         //   Show UI to collect OTP code from user.
+                         emailOtpCreds = RRF "otp.ftlh" uiFeedback
+                         When emailOtpCreds.resend is "yes"
+                              Log "@info User has requested a new code."
+                              //  Resend Email otp
+                              otpCode = Call userRegistrationService sendEmail email lang
+                              When otpCode is null
+                                   Log "@info Fail to resend new code to user. " otpCode
+                                   uiFeedback.infoMessage = Error occurs while sending new code to you. Please contact site administrator.
+                              //  Log code resend
+                              Log "@info New OTP code send successfully!" otpCode
+                              //  Provide feedback about the error message to user.
+                              uiFeedback.errorMessage = A new OTP code has been send to you on your Email
+                         Otherwise
+                              //  "OTP provided by the user "
+                              Log "@info OTP provided by the user "
+                              When emailOtpCreds.passcode is otpCode
+                                   Log "@info Email Otp Verified"
+                                   EmailOtpValidationResult = true
+                                   Log "@info E-mail verification passed, initiating user provisioning flow " userInput
+                                   //  Call user registration service method to register a new user
+                                   inum = Call = Call userRegistrationService addNewUser userInput
+                                   //  If user registration success
+                                   When inum is not null
+                                        //  Show user creation log
+                                        Log "@info User % has been created" inum
+                                        //  "User Account created successfully!"
+                                        uiFeedback.infoMessage = User Account created successfully!
+                                        //  sent sms otp
+                                        smsOtpSend = Call userRegistrationService sendOTPCode phone
+                                        //  The OTP Code has been send to user.
+                                        Log "@info OTP generated and send to: " phone
+                                        otpValidationResult = false
+                                        Repeat 4 times max
+                                             //   Show UI to collect OTP code from user.
+                                             otpCreds = RRF "smsOtp.ftlh" uiFeedback
+                                             When otpCreds.hasRequestedNewCode is "yes"
+                                                  //  Log new code request
+                                                  Log "@info User has requested a new code."
+                                                  //  resendHasSucceed
+                                                  resendHasSucceed = Call userRegistrationService sendOTPCode phone
+                                                  When resendHasSucceed is null
+                                                       Log "@info Fail to resend new code to user. " resendHasSucceed
+                                                       //  Provide feedback about the otp resend error to user.
+                                                       uiFeedback.infoMessage = Error occurs while sending new code to you. Please contact site administrator.
+                                                  Log "@info New OTP code send successfully!" resendHasSucceed
+                                                  //  Provide feedback about the error message to user.
+                                                  uiFeedback.errorMessage = A new OTP code has been send to you on your mobile phone.
+                                             Otherwise
+                                                  //   Add log entry with collected code in log file.
+                                                  Log "@info Information provided by the user is : " otpCreds.code
+                                                  //   Validate the OTP code provided by the user.
+                                                  otpValidationResult = Call userRegistrationService validateOTPCode phone otpCreds.code
+                                                  //  Add log entry withvalidation result in log file.
+                                                  Log "@info OTP validation result is:" otpValidationResult
+                                                  When otpValidationResult is true
+                                                       Log "@info OTP validated Successfully"
+                                                       phoneVerified = Call userRegistrationService markPhoneAsVerified userName
+                                                       //  Show acknowledgement UI page for successful registration
+                                                       acknowledgementInput = RRF "acknowledgement.ftlh" 
+                                                       //  Finish the flow successfully
+                                                       Log "@info Finish the flow successfully"
+                                                       Finish userName
+                                                  Otherwise
+                                                       //  The maximum number of attempt has been reached.
+                                                       Log "@info Invalid code provided "
+                                                       //  Provide feedback to user.
+                                                       uiFeedback.errorMessage = Invalid code provided.
+                                        Log "@info OTP verification loop completed"
+                                        it_bpeus = {success:false, error: ""ExceededTheNumberOfAttemptsAllowed" "}
+                                        Finish it_bpeus
+                                   //  Registration failed log
+                                   Log "@info User registration failed. Error : %" E
+                              Otherwise
+                                   //  Invalid OTP
+                                   Log "@info Invalid OTP, Please Try Again!"
+                                   //  "Invalid OTP, Please Try Again!"
+                                   uiFeedback.infoMessage = Invalid OTP, Please Try Again!
+                                   uiFeedback.errorMessage = You have reached the maximun email OTP verification
+                    //  Email OTP verification loop completed
+                    Log "@info Email OTP verification loop completed"
+                    it_hopdw = {success:false, error: ""User update flow reached max attempts. Try later""}
+                    Finish it_hopdw
+               Otherwise
+                    //  User already registered with UID
+                    Log "@info User already registered with uid: %" userName
+                    //  User already registered with UID
+                    uiFeedback.errorMessage = User already registered with this UserName
+          Otherwise
+               //  User already registered with mail
+               Log "@info User already registered with mail: %" email
+               //  User already Registered
+               uiFeedback.errorMessage = User already Registered with this mail
+               uiFeedback.errorMessage = validation.message
+//  Maximum attempt reached
+Log "@info Maximum attempt reached"
+//  User Registration flow failed
+it_ggzmu = {success:false, error: ""User registration flow reached max attempts try later""}
+Finish it_ggzmu
