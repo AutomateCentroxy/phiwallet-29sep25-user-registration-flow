@@ -117,20 +117,20 @@ Repeat 6 times max
                                                        //  Provide feedback to user.
                                                        uiFeedback.errorMessage = "Invalid code provided."
                                         Log "@info OTP verification loop completed"
-                                        it_lrvcj = {success:false, error: ""ExceededTheNumberOfAttemptsAllowed" "}
-                                        Finish it_lrvcj
+                                        it_tolrh = {success:false, error: ""ExceededTheNumberOfAttemptsAllowed" "}
+                                        Finish it_tolrh
                                    //  Registration failed log
                                    Log "@info User registration failed. Error : %" E
                               Otherwise
                                    //  Invalid OTP
                                    Log "@info Invalid OTP, Please Try Again!"
                                    //  "Invalid OTP, Please Try Again!"
-                                   uiFeedback.infoMessage = Invalid OTP, Please Try Again!
-                                   uiFeedback.errorMessage = You have reached the maximun email OTP verification
+                                   uiFeedback.infoMessage = "Invalid OTP, Please Try Again!"
+                                   uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     //  Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_lgsnx = {success:false, error: ""User update flow reached max attempts. Try later""}
-                    Finish it_lgsnx
+                    it_axiby = {success:false, error: ""User update flow reached max attempts. Try later""}
+                    Finish it_axiby
                Otherwise
                     //  User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -145,5 +145,5 @@ Repeat 6 times max
 //  Maximum attempt reached
 Log "@info Maximum attempt reached"
 //  User Registration flow failed
-it_bpyjo = {success:false, error: ""User registration flow reached max attempts try later""}
-Finish it_bpyjo
+it_wauwi = {success:false, error: ""User registration flow reached max attempts try later""}
+Finish it_wauwi
