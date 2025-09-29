@@ -2013,7 +2013,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true,
+			"selected": false,
 			"dragging": false
 		},
 		{
@@ -2950,7 +2950,7 @@
 					"assignments": [],
 					"nodeIcon": "ph:globe-simple",
 					"templatePath": "InputMobileNumber.ftlh",
-					"asssignedVariableName": "Phone",
+					"asssignedVariableName": "phone",
 					"nodeColor": "",
 					"titleColor": "",
 					"descColor": "",
@@ -2964,7 +2964,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true
 		},
 		{
 			"id": "finishNode-533a2b9c-0403-48a2-8300-a3b5219467c0",
@@ -4516,8 +4516,8 @@
 		}
 	],
 	"viewport": {
-		"x": -6192.901347340472,
-		"y": -1579.8303309777539,
-		"zoom": 1.161508731925722
+		"x": -5579.907410901119,
+		"y": -1344.6490504365042,
+		"zoom": 1
 	}
 }
