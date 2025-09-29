@@ -94,7 +94,7 @@ Repeat 6 times max
                                                   When resendHasSucceed is null
                                                        Log "@info Fail to resend new code to user. " resendHasSucceed
                                                        // Provide feedback about the otp resend error to user.
-                                                       uiFeedback.infoMessage = "Error occurs while sending new code to you. Please contact site administrator."
+                                                       uiFeedback.errorMessage = "Error occurs while sending new code to you. Please contact site administrator."
                                                   Log "@info New OTP code send successfully!" resendHasSucceed
                                                   // Provide feedback about the error message to user.
                                                   uiFeedback.infoMessage = "A new OTP code has been send to you on your mobile phone."
@@ -131,8 +131,8 @@ Repeat 6 times max
                     uiFeedback.errorMessage = "You have reached the maximun email OTP verification"
                     // Email OTP verification loop completed
                     Log "@info Email OTP verification loop completed"
-                    it_gsihc = {success:false, error: "User update flow reached max attempts. Try later"}
-                    Finish it_gsihc
+                    it_kcdow = {success:false, error: "User update flow reached max attempts. Try later"}
+                    Finish it_kcdow
                Otherwise
                     // User already registered with UID
                     Log "@info User already registered with uid: %" userName
@@ -149,5 +149,5 @@ Repeat 6 times max
 // Maximum attempt reached
 Log "@info Maximum attempt reached"
 // User Registration flow failed
-it_yzabs = {success:false, error: "User registration flow reached max attempts try later"}
-Finish it_yzabs
+it_nttmc = {success:false, error: "User registration flow reached max attempts try later"}
+Finish it_nttmc
