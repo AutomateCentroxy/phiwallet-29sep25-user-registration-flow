@@ -2564,7 +2564,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "logNode-3e8cc6b9-ea5f-486b-8bd4-d27c89feea77",
@@ -2620,7 +2620,7 @@
 						{
 							"variableTypeCheck": true,
 							"assignmentExpression": "\"Error occurs while sending new code to you. Please contact site administrator.\"",
-							"assignedVariableName": "uiFeedback.infoMessage"
+							"assignedVariableName": "uiFeedback.errorMessage"
 						}
 					],
 					"nodeIcon": "material-symbols:equal",
@@ -2636,7 +2636,8 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false
+			"selected": true,
+			"dragging": false
 		},
 		{
 			"id": "whenNode-03a6d7a1-ad49-4547-a4a6-acb992db6499",
