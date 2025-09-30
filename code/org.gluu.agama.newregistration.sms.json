@@ -19,7 +19,7 @@
 				"agamaData": {
 					"isTopLevelFlow": true,
 					"basepath": "",
-					"configParams": "",
+					"configParams": "{\n  \"ACCOUNT_SID\": \"PUT_YOUR_TWILIO_ACCOUNT_SID_HERE\",\n  \"AUTH_TOKEN\": \"PUT_YOUR_TWILIO_AUTH_TOKEN_HERE\",\n  \"FROM_NUMBER\": \"PUT_YOUR_TWILIO_FROM_NUMBER_HERE\"\n}",
 					"nodeIcon": "material-symbols:line-start-square",
 					"timeout": "300000",
 					"inputs": "",
