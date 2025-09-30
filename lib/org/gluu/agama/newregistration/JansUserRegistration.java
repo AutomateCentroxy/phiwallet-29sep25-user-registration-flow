@@ -31,7 +31,7 @@ import com.twilio.type.PhoneNumber;
 
 
 
-public class JansUserRegistration extends UserRegistration {
+public class JansUserRegistration extends NewUserRegistration {
 
     private static final Logger logger = LoggerFactory.getLogger(JansUserRegistration.class);
     
@@ -77,7 +77,7 @@ public class JansUserRegistration extends UserRegistration {
     }
 
     //  No-arg singleton accessor (required by engine)
-    public static synchronized UserRegistration getInstance() {
+    public static synchronized NewUserRegistration getInstance() {
         if (INSTANCE == null) {
             Map<String, String> config = loadTwilioConfig();
             INSTANCE = new JansUserRegistration(config);
@@ -86,7 +86,7 @@ public class JansUserRegistration extends UserRegistration {
     }
 
     //  Config-based singleton accessor
-    public static synchronized UserRegistration getInstance(Map<String, String> config) {
+    public static synchronized NewUserRegistration getInstance(Map<String, String> config) {
         if (INSTANCE == null) {
             INSTANCE = new JansUserRegistration(config);
         }
@@ -397,7 +397,7 @@ public class JansUserRegistration extends UserRegistration {
                 return false;
             }
 
-            // 🔑 Just set to true
+            // Just set to true
             user.setAttribute(PHONE_VERIFIED, Boolean.TRUE);
 
             userService.updateUser(user);
