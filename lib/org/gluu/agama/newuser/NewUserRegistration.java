@@ -7,7 +7,7 @@ import org.gluu.agama.newregistration.JansUserRegistration;
 
 
 
-public abstract class UserRegistration {
+public abstract class NewUserRegistration {
     public abstract Map<String, Object> validateInputs(Map<String, String> profile);
 
     public abstract String addNewUser(Map<String, String> profile) throws Exception;
