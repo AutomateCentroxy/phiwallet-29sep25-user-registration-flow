@@ -1,4 +1,4 @@
-package org.gluu.agama.user;
+package org.gluu.agama.newuser;
 
 import java.util.HashMap;
 import java.util.Map;
