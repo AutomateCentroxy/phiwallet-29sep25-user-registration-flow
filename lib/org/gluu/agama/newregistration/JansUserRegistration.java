@@ -11,7 +11,7 @@ import io.jans.util.StringHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.gluu.agama.user.UserRegistration;
+import org.gluu.agama.newuser.NewUserRegistration;
 import io.jans.agama.engine.script.LogUtils;
 import java.io.IOException;
 import io.jans.as.common.service.common.ConfigurationService;
