@@ -28,7 +28,7 @@ public abstract class NewUserRegistration {
     //     return  JansUserRegistration.getInstance();
     // } 
     
-    public static UserRegistration getInstance(HashMap config) {
+    public static NewUserRegistration getInstance(HashMap config) {
         return new JansUserRegistration(config);
     }
 }
