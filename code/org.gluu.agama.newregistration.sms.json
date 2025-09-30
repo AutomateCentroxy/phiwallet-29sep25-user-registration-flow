@@ -19,7 +19,7 @@
 				"agamaData": {
 					"isTopLevelFlow": true,
 					"basepath": "",
-					"configParams": "{\n  \"ACCOUNT_SID\": \"PUT_YOUR_TWILIO_ACCOUNT_SID_HERE\",\n  \"AUTH_TOKEN\": \"PUT_YOUR_TWILIO_AUTH_TOKEN_HERE\",\n  \"FROM_NUMBER\": \"PUT_YOUR_TWILIO_FROM_NUMBER_HERE\"\n}",
+					"configParams": "",
 					"nodeIcon": "material-symbols:line-start-square",
 					"timeout": "300000",
 					"inputs": "",
@@ -35,7 +35,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -1123,7 +1123,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "repeatNode-ec975954-570a-4761-930b-43296f792ac3",
@@ -4570,8 +4570,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1630.8029605695756,
-		"y": -869.9651284389458,
-		"zoom": 1.4260257173641406
+		"x": 1307.6440206194998,
+		"y": 389.2576184315736,
+		"zoom": 0.5
 	}
 }
