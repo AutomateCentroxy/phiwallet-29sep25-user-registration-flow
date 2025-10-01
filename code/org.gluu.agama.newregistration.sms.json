@@ -35,7 +35,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": false,
+			"selected": true,
 			"dragging": false
 		},
 		{
@@ -739,7 +739,7 @@
 				},
 				"previousNodeId": "rrfNode-8fae6a8f-1113-41a1-b159-caf0fdeb26d6",
 				"agamaData": {
-					"javaClassName": "org.gluu.agama.user.UserRegistration",
+					"javaClassName": "org.gluu.agama.newuser.NewUserRegistration",
 					"javaMethodName": "getInstance",
 					"javaVariableName": "",
 					"exceptionVariableField": "",
@@ -1123,7 +1123,7 @@
 				"width": 170,
 				"height": 122
 			},
-			"selected": true
+			"selected": false
 		},
 		{
 			"id": "repeatNode-ec975954-570a-4761-930b-43296f792ac3",
@@ -4570,8 +4570,8 @@
 		}
 	],
 	"viewport": {
-		"x": -1630.8029605695756,
-		"y": -869.9651284389458,
-		"zoom": 1.4260257173641406
+		"x": 1356.9813505520415,
+		"y": 409.0183477060714,
+		"zoom": 0.5494271087884399
 	}
 }
