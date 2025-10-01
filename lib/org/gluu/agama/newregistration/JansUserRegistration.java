@@ -274,26 +274,39 @@ public class JansUserRegistration extends NewUserRegistration {
     }
     
         
-    public String sendOTPCode(String phone) {
+    public String sendOTPCode(String phone, String lang) {
         try {
             logger.info("Sending OTP Code via SMS to phone: {}", phone);
 
             String otpCode = generateSMSOTpCode(OTP_CODE_LENGTH);
-
             logger.info("Generated OTP {} for phone {}", otpCode, phone);
 
-            String message = "Welcome to AgamaLab. This is your OTP Code: " + otpCode;
+            
+            String preferredLang = (lang != null && !lang.isEmpty()) ? lang.toLowerCase() : "en";
+
+            
+            Map<String, String> messages = new HashMap<>();
+            messages.put("en", "Your Phi Wallet verification code is: " + otpCode);
+            messages.put("fr", "Votre code de vérification Phi Wallet est : " + otpCode);
+            messages.put("pt", "Seu código de verificação Phi Wallet é: " + otpCode);
+            messages.put("es", "Su código de verificación de Phi Wallet es: " + otpCode);
+            messages.put("id", "Kode verifikasi Phi Wallet Anda adalah: " + otpCode);
+            messages.put("ar", "رمز التحقق الخاص بـ Phi Wallet الخاص بك هو: " + otpCode);
+
+            
+            String message = messages.getOrDefault(preferredLang, messages.get("en"));
 
             associateGeneratedCodeToPhone(phone, otpCode);
 
             sendTwilioSms(phone, message);
-            return phone; // Return phone if successful
+
+            return phone;
         } catch (Exception ex) {
             logger.error("Failed to send OTP to phone: {}. Error: {}", phone, ex.getMessage(), ex);
             return null;
         }
-
     }
+
 
     private String generateSMSOTpCode(int codeLength) {
         String numbers = "0123456789";
