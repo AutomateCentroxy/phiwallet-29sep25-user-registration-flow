@@ -49,6 +49,7 @@ public class JansUserRegistration extends NewUserRegistration {
     private static final String INUM_ATTR = "inum";
     private static final String EXT_ATTR = "jansExtUid";
     private static final String USER_STATUS = "jansStatus";
+    private static final String PHONE_NUMBER = "mobile";
     private static final String EXT_UID_PREFIX = "github:";
     private static final String EMAIL_VERIFIED = "emailVerified";
     private static final String PHONE_VERIFIED = "phoneNumberVerified";
@@ -401,7 +402,7 @@ public class JansUserRegistration extends NewUserRegistration {
         return getSingleValuedAttr(user, INUM_ATTR);
     } 
 
-    public boolean markPhoneAsVerified(String userName) {
+    public boolean markPhoneAsVerified(String userName, String phone) {
         try {
             UserService userService = CdiUtil.bean(UserService.class);
             User user = getUser(UID, userName);
@@ -411,6 +412,7 @@ public class JansUserRegistration extends NewUserRegistration {
             }
 
             // Just set to true
+            user.setAttribute(PHONE_NUMBER, phone);
             user.setAttribute(PHONE_VERIFIED, Boolean.TRUE);
 
             userService.updateUser(user);
